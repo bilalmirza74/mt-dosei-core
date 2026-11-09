@@ -224,12 +224,13 @@ function mt_dosei_convert_page_to_elementor() {
 	$cleared = wp_update_post(
 		array(
 			'ID'           => $post_id,
-			'post_content' => '',
+			'post_content' => '<!-- Elementor content is stored in Elementor data. -->',
 		),
 		true
 	);
 	$updated_post = get_post( $post_id );
-	if ( is_wp_error( $cleared ) || ! $updated_post || '' !== $updated_post->post_content ) {
+	$content_marker = '<!-- Elementor content is stored in Elementor data. -->';
+	if ( is_wp_error( $cleared ) || ! $updated_post || $content_marker !== $updated_post->post_content ) {
 		if ( $has_elementor_data ) {
 			update_post_meta( $post_id, '_elementor_data', $existing_elementor_data );
 			update_post_meta( $post_id, '_elementor_version', $existing_elementor_version );
@@ -245,7 +246,7 @@ function mt_dosei_convert_page_to_elementor() {
 				'post_content' => $post->post_content,
 			)
 		);
-		wp_die( esc_html__( 'The original page source could not be removed from the editor. The previous Elementor layout was restored.', 'mt-dosei-core' ) );
+		wp_die( esc_html__( 'The Elementor content marker could not be saved. The previous Elementor layout and original page source were restored.', 'mt-dosei-core' ) );
 	}
 	clean_post_cache( $post_id );
 
