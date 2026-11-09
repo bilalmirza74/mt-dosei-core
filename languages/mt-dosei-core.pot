@@ -1,0 +1,1659 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mt-dosei-core\n"
+"POT-Creation-Date: 2016-11-15 07:21+0100\n"
+"PO-Revision-Date: 2016-11-15 07:21+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e;esc_attr__;esc_attr_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: gallery/gallery-register.php:11
+msgid "Galleries"
+msgstr ""
+
+#: gallery/gallery-register.php:12 vc/config.php:196
+msgid "Gallery"
+msgstr ""
+
+#: gallery/gallery-register.php:13
+msgid "Add New"
+msgstr ""
+
+#: gallery/gallery-register.php:14 gallery/gallery-register.php:16
+msgid "Add New Gallery"
+msgstr ""
+
+#: gallery/gallery-register.php:15
+msgid "Edit Gallery"
+msgstr ""
+
+#: gallery/gallery-register.php:17 portfolio/portfolio-register.php:17
+msgid "View Item"
+msgstr ""
+
+#: gallery/gallery-register.php:18
+msgid "Search Galleries"
+msgstr ""
+
+#: gallery/gallery-register.php:19
+msgid "No galleries found"
+msgstr ""
+
+#: gallery/gallery-register.php:20
+msgid "No galleries found in trash"
+msgstr ""
+
+#: gallery/gallery-register.php:56 vc/config.php:202
+msgid "Gallery ID"
+msgstr ""
+
+#: mt-dosei-core.php:59
+msgid "Facebook link"
+msgstr ""
+
+#: mt-dosei-core.php:60
+msgid "Twitter link"
+msgstr ""
+
+#: mt-dosei-core.php:61
+msgid "Dribbble link"
+msgstr ""
+
+#: mt-dosei-core.php:62
+msgid "YouTube link"
+msgstr ""
+
+#: mt-dosei-core.php:63
+msgid "Instagram link"
+msgstr ""
+
+#: mt-dosei-core.php:64
+msgid "Behance link"
+msgstr ""
+
+#: mt-dosei-core.php:65
+msgid "Vimeo link"
+msgstr ""
+
+#: mt-dosei-core.php:66
+msgid "LinkedIn link"
+msgstr ""
+
+#: mt-dosei-core.php:67
+msgid "Google link"
+msgstr ""
+
+#: mthemes-shortcodes/includes/class-mtsc-admin.php:38
+#: mthemes-shortcodes/includes/class-mtsc-admin.php:268
+msgid "Insert Shortcode"
+msgstr ""
+
+#: mthemes-shortcodes/includes/class-mtsc-admin.php:185
+#: mthemes-shortcodes/includes/class-mtsc-admin.php:190
+msgid "Choose a shortcode"
+msgstr ""
+
+#: mthemes-shortcodes/includes/class-mtsc-admin.php:192
+msgid "Select a shortcode"
+msgstr ""
+
+#: mthemes-shortcodes/includes/class-mtsc-admin.php:229
+#: mthemes-shortcodes/includes/class-mtsc-admin.php:246
+msgid "Remove"
+msgstr ""
+
+#: mthemes-shortcodes/includes/class-mtsc-admin.php:269
+msgid "Cancel"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:16
+msgid "Accordion"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:17
+#: mthemes-shortcodes/includes/config.php:880
+#: mthemes-shortcodes/includes/config.php:906
+msgid "You can use drag and drop to reorder items"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:24
+msgid "Panel title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:25
+msgid "Enter the name of the panel"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:30
+#: mthemes-shortcodes/includes/config.php:68
+#: mthemes-shortcodes/includes/config.php:893
+#: mthemes-shortcodes/includes/config.php:919
+#: mthemes-shortcodes/includes/config.php:972 vc/config.php:85
+msgid "Content"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:31
+#: mthemes-shortcodes/includes/config.php:69
+#: mthemes-shortcodes/includes/config.php:894
+#: mthemes-shortcodes/includes/config.php:920
+#: mthemes-shortcodes/includes/config.php:973 vc/config.php:86
+msgid "Enter here your content"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:37
+msgid "Add Panel"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:45 vc/config.php:50
+msgid "Alert"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:50 vc/config.php:56
+msgid "Alert type"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:51 vc/config.php:57
+msgid "Choose alert type"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:56 vc/config.php:69
+msgid "Alert title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:57 vc/config.php:70
+msgid "Enter alert title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:62
+#: mthemes-shortcodes/includes/config.php:144
+#: mthemes-shortcodes/includes/config.php:203
+#: mthemes-shortcodes/includes/config.php:443
+#: mthemes-shortcodes/includes/config.php:529
+#: mthemes-shortcodes/includes/config.php:604
+#: mthemes-shortcodes/includes/config.php:712
+#: mthemes-shortcodes/includes/config.php:791
+#: mthemes-shortcodes/includes/config.php:867
+#: mthemes-shortcodes/includes/config.php:966 vc/config.php:78
+#: vc/config.php:183 vc/config.php:297 vc/config.php:350 vc/config.php:453
+#: vc/config.php:811 vc/config.php:890 vc/config.php:948
+msgid "Extra css class"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:63
+#: mthemes-shortcodes/includes/config.php:145
+#: mthemes-shortcodes/includes/config.php:204
+#: mthemes-shortcodes/includes/config.php:444
+#: mthemes-shortcodes/includes/config.php:530
+#: mthemes-shortcodes/includes/config.php:605
+#: mthemes-shortcodes/includes/config.php:713
+#: mthemes-shortcodes/includes/config.php:792
+#: mthemes-shortcodes/includes/config.php:868
+#: mthemes-shortcodes/includes/config.php:967 vc/config.php:79
+#: vc/config.php:184 vc/config.php:298 vc/config.php:351 vc/config.php:454
+#: vc/config.php:812 vc/config.php:891 vc/config.php:949
+msgid "Add custom css class"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:80 vc/config.php:98
+msgid "Button"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:85 vc/config.php:104
+msgid "Button text"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:86 vc/config.php:105
+msgid "Enter button text here"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:91
+#: mthemes-shortcodes/includes/config.php:577 vc/config.php:113
+#: vc/config.php:780
+msgid "Button link"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:92
+#: mthemes-shortcodes/includes/config.php:578 vc/config.php:114
+#: vc/config.php:781
+msgid "Enter button link e.g. http://google.com"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:97 vc/config.php:120
+msgid "Button size"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:98 vc/config.php:121
+msgid "Choose button size"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:101
+#: mthemes-shortcodes/includes/config.php:167
+#: mthemes-shortcodes/includes/config.php:187
+#: mthemes-shortcodes/includes/config.php:261
+#: mthemes-shortcodes/includes/config.php:517
+#: mthemes-shortcodes/includes/config.php:593
+#: mthemes-shortcodes/includes/config.php:828
+#: mthemes-shortcodes/includes/config.php:844
+#: mthemes-shortcodes/includes/config.php:961
+#: mthemes-shortcodes/includes/helpers.php:21
+#: mthemes-shortcodes/includes/helpers.php:25 vc/config.php:26 vc/config.php:61
+#: vc/config.php:125 vc/config.php:136 vc/config.php:441 vc/config.php:799
+#: vc/config.php:854 vc/config.php:871 vc/config.php:943
+msgid "Default"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:102 vc/config.php:126
+msgid "Large"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:103 vc/config.php:127
+msgid "Small"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:107 vc/config.php:142
+msgid "Button block"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:108 vc/config.php:143
+msgid "Use block level button"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:113 vc/config.php:149
+msgid "Button radius"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:114 vc/config.php:150
+msgid "Choose button radius"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:119
+#: mthemes-shortcodes/includes/config.php:522
+#: mthemes-shortcodes/includes/config.php:552
+#: mthemes-shortcodes/includes/config.php:833 vc/config.php:156
+#: vc/config.php:446 vc/config.php:752 vc/config.php:859
+msgid "Icon"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:120
+#: mthemes-shortcodes/includes/config.php:523
+#: mthemes-shortcodes/includes/config.php:553
+#: mthemes-shortcodes/includes/config.php:834
+msgid "Choose icon or enter your own class"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:126 vc/config.php:163
+msgid "Icon align"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:127
+msgid "Choose icon align"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:130 vc/config.php:168
+msgid "Before text"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:131 vc/config.php:169
+msgid "After text"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:135
+msgid "Link target"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:136 vc/config.php:174
+msgid "Choose link target"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:139 vc/config.php:178
+msgid "Open link in the same window"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:140 vc/config.php:179
+msgid "Open link in new window"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:156
+msgid "Column"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:163
+msgid "Column size"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:168
+#: mthemes-shortcodes/includes/config.php:188
+msgid "1/12 (8.3%)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:169
+#: mthemes-shortcodes/includes/config.php:189
+msgid "2/12 (16.6%)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:170
+#: mthemes-shortcodes/includes/config.php:190
+msgid "3/12 (25%)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:171
+#: mthemes-shortcodes/includes/config.php:191
+msgid "4/12 (33.3%)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:172
+#: mthemes-shortcodes/includes/config.php:192
+msgid "5/12 (41.6%)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:173
+#: mthemes-shortcodes/includes/config.php:193
+msgid "6/12 (50%)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:174
+#: mthemes-shortcodes/includes/config.php:194
+msgid "7/12 (58.3%)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:175
+#: mthemes-shortcodes/includes/config.php:195
+msgid "8/12 (66.6%)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:176
+#: mthemes-shortcodes/includes/config.php:196
+msgid "9/12 (75%)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:177
+#: mthemes-shortcodes/includes/config.php:197
+msgid "10/12 (83.3%)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:178
+#: mthemes-shortcodes/includes/config.php:198
+msgid "11/12 (91.6%)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:179
+#: mthemes-shortcodes/includes/config.php:199
+msgid "12/12 (100%)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:183
+msgid "Column offset"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:210
+msgid "Add Column"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:218
+msgid "Dropcap"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:223
+msgid "Dropcap letter"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:224
+msgid "Enter dropcap letter here"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:235
+msgid "Gallery - Carousel"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:240
+#: mthemes-shortcodes/includes/config.php:296
+#: mthemes-shortcodes/includes/config.php:347
+#: mthemes-shortcodes/includes/config.php:385
+msgid "Choose gallery"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:241
+#: mthemes-shortcodes/includes/config.php:297
+#: mthemes-shortcodes/includes/config.php:348
+#: mthemes-shortcodes/includes/config.php:386
+msgid "Choose gallery from the list"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:246
+msgid "Height"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:247
+msgid "Choose carousel height"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:250
+#, php-format
+msgid "70% of window height"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:251
+#, php-format
+msgid "80% of window height"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:252
+#, php-format
+msgid "90% of window height"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:253
+#, php-format
+msgid "100% of window height"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:257
+msgid "Effect"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:258
+msgid "Choose carousel effect"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:262
+msgid "Opacity"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:263
+msgid "Opacity (partial)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:264
+msgid "Scale"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:265
+msgid "Opacity and Scale"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:266
+msgid "Opacity (partial) and Scale"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:270
+#: mthemes-shortcodes/includes/config.php:321
+#: mthemes-shortcodes/includes/config.php:353 vc/config.php:237
+msgid "Margin between items"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:271
+msgid "Set horizontal margin between items (in pixels)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:276
+#: mthemes-shortcodes/includes/config.php:327
+#: mthemes-shortcodes/includes/config.php:365
+msgid "Caption"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:277
+#: mthemes-shortcodes/includes/config.php:328
+#: mthemes-shortcodes/includes/config.php:366
+msgid "Show image caption inside lightbox"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:282
+#: mthemes-shortcodes/includes/config.php:333
+#: mthemes-shortcodes/includes/config.php:371
+msgid "EXIF data"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:283
+#: mthemes-shortcodes/includes/config.php:334
+#: mthemes-shortcodes/includes/config.php:372
+msgid "Show EXIF image data inside lightbox. Caption must be enabled"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:291
+msgid "Gallery - Grid/Masonry"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:302 vc/config.php:209
+msgid "Gallery image type"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:303 vc/config.php:210
+msgid "Choose gallery image type"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:306 vc/config.php:478
+msgid "Masonry"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:307 vc/config.php:477
+msgid "Grid"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:311 vc/config.php:220
+msgid "Gallery size"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:312
+msgid "Choose gallery grid size"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:315 vc/config.php:228
+#: vc/config.php:487 vc/config.php:584
+msgid "3 Columns"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:316 vc/config.php:227
+#: vc/config.php:489 vc/config.php:586
+msgid "2 Columns"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:317 vc/config.php:225
+#: vc/config.php:488 vc/config.php:585
+msgid "4 Columns"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:322
+#: mthemes-shortcodes/includes/config.php:354 vc/config.php:238
+msgid "Set margin between items (in pixels)"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:342
+msgid "Gallery - Justified"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:359
+msgid "Image height"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:360
+msgid "Set custom image height. Default: 500"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:380
+msgid "Gallery - Slider"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:391
+msgid "Play/pause button"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:392
+msgid "Enable play/pause button for this slider"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:397
+msgid "Scale effect"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:398
+msgid "Use scale effect in slider"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:409 vc/config.php:257
+msgid "Heading"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:414 vc/config.php:263
+#: vc/config.php:316
+msgid "Heading text"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:415 vc/config.php:264
+#: vc/config.php:317
+msgid "Enter heading text"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:420 vc/config.php:272
+#: vc/config.php:325
+msgid "Heading size"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:421 vc/config.php:273
+msgid "Choose heading size"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:424 vc/config.php:277
+#: vc/config.php:330
+msgid "Heading 1"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:425 vc/config.php:278
+#: vc/config.php:331
+msgid "Heading 2"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:426 vc/config.php:279
+#: vc/config.php:332
+msgid "Heading 3"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:427 vc/config.php:280
+#: vc/config.php:333
+msgid "Heading 4"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:428 vc/config.php:281
+#: vc/config.php:334
+msgid "Heading 5"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:429 vc/config.php:282
+#: vc/config.php:335
+msgid "Heading 6"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:433 vc/config.php:286
+#: vc/config.php:339
+msgid "Heading align"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:434
+msgid "Choose heading text align"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:437
+#: mthemes-shortcodes/includes/config.php:818 vc/config.php:291
+#: vc/config.php:344 vc/config.php:534 vc/config.php:624 vc/config.php:843
+msgid "Left"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:438 vc/config.php:292
+#: vc/config.php:345 vc/config.php:535 vc/config.php:625
+msgid "Center"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:439
+#: mthemes-shortcodes/includes/config.php:820 vc/config.php:293
+#: vc/config.php:346 vc/config.php:533 vc/config.php:623 vc/config.php:845
+msgid "Right"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:455
+msgid "Highlight"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:460
+msgid "Highlighted text"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:461
+msgid "Enter highlighted text here"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:472 vc/config.php:384
+msgid "Milestone"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:477 vc/config.php:390
+msgid "Milestone title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:478 vc/config.php:391
+msgid "Enter milestone title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:483 vc/config.php:399
+msgid "Milestone number"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:484 vc/config.php:400
+msgid "Enter milestone number"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:489 vc/config.php:408
+msgid "Count number from"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:490 vc/config.php:409
+msgid "Choose number that you want to count from"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:495 vc/config.php:415
+msgid "Count duration"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:496 vc/config.php:416
+msgid "Choose count duration time in ms. 1000ms = 1s"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:501 vc/config.php:422
+msgid "Text before a number"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:502 vc/config.php:423
+msgid "Enter text that will be placed before a number. You can use here e.g. $"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:507 vc/config.php:429
+msgid "Text after a number"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:508 vc/config.php:430
+#, php-format
+msgid ""
+"Enter text that will be placed after a number. You can use here e.g. % or +"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:513 vc/config.php:436
+msgid "Milestone style"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:514 vc/config.php:437
+msgid "Choose milestone style"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:518
+#: mthemes-shortcodes/includes/config.php:594
+#: mthemes-shortcodes/includes/config.php:829
+#: mthemes-shortcodes/includes/config.php:962 vc/config.php:442
+#: vc/config.php:800 vc/config.php:855 vc/config.php:944
+msgid "Light"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:541 vc/config.php:738
+msgid "Pricing"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:546 vc/config.php:744
+msgid "Pricing title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:547 vc/config.php:745
+msgid "Enter pricing title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:559 vc/config.php:759
+msgid "Price"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:565 vc/config.php:766
+msgid "Currency"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:566 vc/config.php:767
+msgid "Use currency sign or abbreviation here e.g. $"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:571 vc/config.php:773
+msgid "Period"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:572 vc/config.php:774
+msgid "Add pricing period here e.g. /month"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:583 vc/config.php:787
+msgid "Button title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:589 vc/config.php:794
+msgid "Pricing style"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:590 vc/config.php:795
+msgid "Choose pricing style"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:598 vc/config.php:804
+msgid "Recommended"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:599 vc/config.php:805
+msgid "Add additional highlight for this pricing"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:616
+msgid "Section"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:621
+#: mthemes-shortcodes/includes/config.php:726
+msgid "Container"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:622
+#: mthemes-shortcodes/includes/config.php:727
+#, php-format
+msgid ""
+"Wrap section content with container. If set to \"No\" content inside section "
+"will be 100% of window width"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:627
+#: mthemes-shortcodes/includes/config.php:762
+msgid "Background color"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:628
+msgid "Choose section background color"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:633
+msgid "Background image"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:634
+msgid "Enter url to background image e.g. http://yoursite.com/image.jpg"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:639
+msgid "Image repeat"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:640
+msgid "Choose background image repeat"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:643
+msgid "No repeat"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:644
+msgid "Repeat"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:645
+msgid "Repeat horizontally"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:646
+msgid "Repeat vertically"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:650
+msgid "Image position"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:651
+msgid "Choose background image position"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:654
+msgid "Center center"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:655
+msgid "Center top"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:656
+msgid "Center bottom"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:657
+msgid "Left top"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:658
+msgid "Left center"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:659
+msgid "Left bottom"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:660
+msgid "Right top"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:661
+msgid "Right center"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:662
+msgid "Right bottom"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:666
+msgid "Image attachment"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:667
+msgid "Choose background image attachment"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:670
+msgid "Scroll"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:671
+msgid "Fixed"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:675
+msgid "Image size"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:676
+msgid "Choose background image size"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:679
+msgid "Cover"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:680
+msgid "Auto"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:684
+msgid "Parallax section"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:685
+msgid "Use parallax section"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:690
+msgid "Parallax speed"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:691
+msgid "Set parallax speed"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:706
+#: mthemes-shortcodes/includes/config.php:785
+msgid "Section padding"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:707
+#: mthemes-shortcodes/includes/config.php:786
+msgid ""
+"Use exactly like CSS. You can see examples <a href=\"http://www.w3schools."
+"com/css/css_padding.asp\" target=\"_blank\">here</a><br>or in the theme "
+"documentation"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:721
+msgid "Section - Video"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:732
+msgid "MP4 video file"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:733
+msgid "Enter url to .mp4 video file"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:738
+msgid "WEBM video file"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:739
+msgid "Enter url to .webm video file"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:744
+msgid "OGV video file"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:745
+msgid "Enter url to .ogv video file"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:750
+msgid "Loop"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:751
+msgid ""
+"If set to YES, the video will start over again, every time it is finished"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:756
+msgid "Poster"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:757
+msgid ""
+"Enter url video image poster. It is used before video is loaded and on "
+"mobile devices"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:763
+msgid "Choose video overlay background color"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:768
+msgid "Background color opacity"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:769
+msgid "Choose opacity for a background color"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:803 vc/config.php:824
+msgid "Service"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:808 vc/config.php:830
+msgid "Service title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:809 vc/config.php:831
+msgid "Enter service title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:814 vc/config.php:838
+msgid "Service type"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:815 vc/config.php:839
+msgid "Choose service type"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:819 vc/config.php:844
+msgid "Top"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:824 vc/config.php:849
+msgid "Service style"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:825 vc/config.php:850
+msgid "Choose service style"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:840 vc/config.php:866
+msgid "Icon style"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:841 vc/config.php:867
+msgid "Choose icon style"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:845 vc/config.php:872
+msgid "Accent color"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:849 vc/config.php:876
+msgid "Link"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:850 vc/config.php:877
+msgid "Enter custom link"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:855 vc/config.php:883
+msgid "Link title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:856
+msgid "Enter link title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:861 vc/config.php:897
+msgid "Service content"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:862 vc/config.php:898
+msgid "Enter service content"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:879
+msgid "Tabs"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:887
+#: mthemes-shortcodes/includes/config.php:913
+msgid "Tab title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:888
+#: mthemes-shortcodes/includes/config.php:914
+msgid "Enter the name of the tab"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:900
+#: mthemes-shortcodes/includes/config.php:926
+msgid "Add Tab"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:905
+msgid "Tabs - Features"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:934 vc/config.php:910
+msgid "Testimonial"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:939 vc/config.php:916
+msgid "Testimonial title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:940 vc/config.php:917
+msgid "Enter testimonial title"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:945 vc/config.php:924
+msgid "Testimonial subtitle"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:946 vc/config.php:925
+msgid "Enter testimonial subtitle"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:951 vc/config.php:931
+msgid "Testimonial thumb"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:952 vc/config.php:932
+msgid "Enter url to thumbnail e.g. http://yoursite.com/image.jpg"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:957 vc/config.php:938
+msgid "Testimonial style"
+msgstr ""
+
+#: mthemes-shortcodes/includes/config.php:958 vc/config.php:939
+msgid "Choose testimonial style"
+msgstr ""
+
+#: mthemes-shortcodes/includes/helpers.php:13
+#: mthemes-shortcodes/includes/helpers.php:18 vc/config.php:18 vc/config.php:23
+msgid "Yes"
+msgstr ""
+
+#: mthemes-shortcodes/includes/helpers.php:14
+#: mthemes-shortcodes/includes/helpers.php:17 vc/config.php:19 vc/config.php:22
+msgid "No"
+msgstr ""
+
+#: mthemes-shortcodes/includes/helpers.php:22 vc/config.php:27
+msgid "Round"
+msgstr ""
+
+#: mthemes-shortcodes/includes/helpers.php:26 vc/config.php:62
+msgid "Success"
+msgstr ""
+
+#: mthemes-shortcodes/includes/helpers.php:27 vc/config.php:63
+msgid "Info"
+msgstr ""
+
+#: mthemes-shortcodes/includes/helpers.php:28 vc/config.php:64
+msgid "Warning"
+msgstr ""
+
+#: mthemes-shortcodes/includes/helpers.php:29
+msgid "Danger"
+msgstr ""
+
+#: portfolio/portfolio-register.php:11
+msgid "Portfolio"
+msgstr ""
+
+#: portfolio/portfolio-register.php:12
+msgid "Portfolio Item"
+msgstr ""
+
+#: portfolio/portfolio-register.php:13
+msgid "Add New Item"
+msgstr ""
+
+#: portfolio/portfolio-register.php:14 portfolio/portfolio-register.php:16
+msgid "Add New Portfolio Item"
+msgstr ""
+
+#: portfolio/portfolio-register.php:15
+msgid "Edit Portfolio Item"
+msgstr ""
+
+#: portfolio/portfolio-register.php:18
+msgid "Search Portfolio"
+msgstr ""
+
+#: portfolio/portfolio-register.php:19
+msgid "No portfolio items found"
+msgstr ""
+
+#: portfolio/portfolio-register.php:20
+msgid "No portfolio items found in trash"
+msgstr ""
+
+#: portfolio/portfolio-register.php:60 portfolio/portfolio-register.php:74
+msgid "Portfolio Categories"
+msgstr ""
+
+#: portfolio/portfolio-register.php:61
+msgid "Portfolio Category"
+msgstr ""
+
+#: portfolio/portfolio-register.php:62
+msgid "Search Portfolio Categories"
+msgstr ""
+
+#: portfolio/portfolio-register.php:63
+msgid "Popular Portfolio Categories"
+msgstr ""
+
+#: portfolio/portfolio-register.php:64
+msgid "All Portfolio Categories"
+msgstr ""
+
+#: portfolio/portfolio-register.php:65
+msgid "Parent Portfolio Category"
+msgstr ""
+
+#: portfolio/portfolio-register.php:66
+msgid "Parent Portfolio Category:"
+msgstr ""
+
+#: portfolio/portfolio-register.php:67
+msgid "Edit Portfolio Category"
+msgstr ""
+
+#: portfolio/portfolio-register.php:68
+msgid "Update Portfolio Category"
+msgstr ""
+
+#: portfolio/portfolio-register.php:69
+msgid "Add New Portfolio Category"
+msgstr ""
+
+#: portfolio/portfolio-register.php:70
+msgid "New Portfolio Category Name"
+msgstr ""
+
+#: portfolio/portfolio-register.php:71
+msgid "Separate portfolio categories with commas"
+msgstr ""
+
+#: portfolio/portfolio-register.php:72
+msgid "Add or remove portfolio categories"
+msgstr ""
+
+#: portfolio/portfolio-register.php:73
+msgid "Choose from the most used portfolio categories"
+msgstr ""
+
+#: portfolio/portfolio-register.php:100
+msgid "Featured image"
+msgstr ""
+
+#: vc/config.php:12
+msgid "Dosei shortcodes"
+msgstr ""
+
+#: vc/config.php:30
+msgid "Descending order (3, 2, 1)"
+msgstr ""
+
+#: vc/config.php:31
+msgid "Ascending order (1, 2, 3)"
+msgstr ""
+
+#: vc/config.php:34
+msgid "By date"
+msgstr ""
+
+#: vc/config.php:35
+msgid "By title"
+msgstr ""
+
+#: vc/config.php:36
+msgid "By author"
+msgstr ""
+
+#: vc/config.php:37
+msgid "Random order"
+msgstr ""
+
+#: vc/config.php:38
+msgid "By number of comments"
+msgstr ""
+
+#: vc/config.php:41
+msgid "Show all"
+msgstr ""
+
+#: vc/config.php:42
+msgid "Show only protected items"
+msgstr ""
+
+#: vc/config.php:43
+msgid "Hide all protected items"
+msgstr ""
+
+#: vc/config.php:51
+msgid "Add alert shortcode"
+msgstr ""
+
+#: vc/config.php:65
+msgid "Error"
+msgstr ""
+
+#: vc/config.php:99
+msgid "Add button shortcode"
+msgstr ""
+
+#: vc/config.php:131
+msgid "Button style"
+msgstr ""
+
+#: vc/config.php:132
+msgid "Choose button style"
+msgstr ""
+
+#: vc/config.php:137
+msgid "Ghost"
+msgstr ""
+
+#: vc/config.php:138
+msgid "Ghost - light"
+msgstr ""
+
+#: vc/config.php:157 vc/config.php:447 vc/config.php:753 vc/config.php:860
+msgid "Enter icon class here"
+msgstr ""
+
+#: vc/config.php:164
+msgid "Choose Icon align"
+msgstr ""
+
+#: vc/config.php:173
+msgid "Target"
+msgstr ""
+
+#: vc/config.php:197
+msgid "Add gallery shortcode"
+msgstr ""
+
+#: vc/config.php:203
+msgid "Enter gallery ID"
+msgstr ""
+
+#: vc/config.php:214
+msgid "Grid: 800 / 500px"
+msgstr ""
+
+#: vc/config.php:215
+msgid "Masonry: 800px / 100%"
+msgstr ""
+
+#: vc/config.php:216
+msgid "Masonry large: large from media settings"
+msgstr ""
+
+#: vc/config.php:221
+msgid "Choose gallery size"
+msgstr ""
+
+#: vc/config.php:226
+msgid "1 Column"
+msgstr ""
+
+#: vc/config.php:229
+msgid "5 Columns"
+msgstr ""
+
+#: vc/config.php:230
+msgid "6 Columns"
+msgstr ""
+
+#: vc/config.php:231
+msgid "7 Columns"
+msgstr ""
+
+#: vc/config.php:232
+msgid "8 Columns"
+msgstr ""
+
+#: vc/config.php:233
+msgid "9 Columns"
+msgstr ""
+
+#: vc/config.php:244
+msgid "Outer margin"
+msgstr ""
+
+#: vc/config.php:245
+msgid "Choose to use gallery outer margin"
+msgstr ""
+
+#: vc/config.php:258
+msgid "Add heading shortcode"
+msgstr ""
+
+#: vc/config.php:287 vc/config.php:340
+msgid "Choose heading align"
+msgstr ""
+
+#: vc/config.php:310
+msgid "Heading - Huge"
+msgstr ""
+
+#: vc/config.php:311
+msgid "Add huge heading shortcode"
+msgstr ""
+
+#: vc/config.php:326
+msgid ""
+"Choose heading size. It is used only for SEO purposes. Huge heading has "
+"fixed size"
+msgstr ""
+
+#: vc/config.php:363
+msgid "Lead"
+msgstr ""
+
+#: vc/config.php:364
+msgid "Add lead shortcode"
+msgstr ""
+
+#: vc/config.php:369
+msgid "Lead text"
+msgstr ""
+
+#: vc/config.php:370
+msgid "Enter lead text"
+msgstr ""
+
+#: vc/config.php:385
+msgid "Add milestone shortcode"
+msgstr ""
+
+#: vc/config.php:466
+msgid "Portfolio - Grid"
+msgstr ""
+
+#: vc/config.php:467
+msgid "Add portfolio grid shortcode"
+msgstr ""
+
+#: vc/config.php:472
+msgid "Type"
+msgstr ""
+
+#: vc/config.php:473
+msgid "Choose portfolio grid type"
+msgstr ""
+
+#: vc/config.php:482 vc/config.php:579
+msgid "Size"
+msgstr ""
+
+#: vc/config.php:483 vc/config.php:580
+msgid "Choose portfolio grid size"
+msgstr ""
+
+#: vc/config.php:493
+msgid "Margin"
+msgstr ""
+
+#: vc/config.php:494
+msgid "Choose margin between items (in pixels)"
+msgstr ""
+
+#: vc/config.php:500 vc/config.php:590 vc/config.php:690
+msgid "Number of items"
+msgstr ""
+
+#: vc/config.php:501 vc/config.php:591 vc/config.php:691
+msgid "Choose number of items to show (default value: -1 to show all)"
+msgstr ""
+
+#: vc/config.php:507 vc/config.php:597 vc/config.php:697
+msgid "Order"
+msgstr ""
+
+#: vc/config.php:508 vc/config.php:598 vc/config.php:698
+msgid "Choose posts order"
+msgstr ""
+
+#: vc/config.php:514 vc/config.php:604 vc/config.php:704
+msgid "Order by"
+msgstr ""
+
+#: vc/config.php:515 vc/config.php:605 vc/config.php:705
+msgid "Choose how to sort retrieved posts"
+msgstr ""
+
+#: vc/config.php:521 vc/config.php:611
+msgid "Filter"
+msgstr ""
+
+#: vc/config.php:522 vc/config.php:612
+msgid "Show category filter"
+msgstr ""
+
+#: vc/config.php:528 vc/config.php:618
+msgid "Filter align"
+msgstr ""
+
+#: vc/config.php:529 vc/config.php:619
+msgid "Choose filter align"
+msgstr ""
+
+#: vc/config.php:539 vc/config.php:629
+msgid "\"Show all\" filter text"
+msgstr ""
+
+#: vc/config.php:540 vc/config.php:630
+msgid "Change \"Show all\" filter text if needed"
+msgstr ""
+
+#: vc/config.php:546 vc/config.php:636 vc/config.php:711
+msgid "Pagination"
+msgstr ""
+
+#: vc/config.php:547 vc/config.php:637 vc/config.php:712
+msgid "Show pagination at the bottom of the portfolio. Works with limit option"
+msgstr ""
+
+#: vc/config.php:553 vc/config.php:643 vc/config.php:718
+msgid "Password protected items"
+msgstr ""
+
+#: vc/config.php:554 vc/config.php:644 vc/config.php:719
+msgid "Choose how you want to show protected items"
+msgstr ""
+
+#: vc/config.php:560 vc/config.php:650 vc/config.php:725
+msgid "Category slug"
+msgstr ""
+
+#: vc/config.php:561 vc/config.php:651 vc/config.php:726
+msgid "Choose portfolio category. Enter category slug here e.g. category-1"
+msgstr ""
+
+#: vc/config.php:573
+msgid "Portfolio - Mosaic"
+msgstr ""
+
+#: vc/config.php:574
+msgid "Add portfolio mosaic shortcode"
+msgstr ""
+
+#: vc/config.php:663
+msgid "Portfolio - Search"
+msgstr ""
+
+#: vc/config.php:664
+msgid "Add portfolio search shortcode"
+msgstr ""
+
+#: vc/config.php:669
+msgid "Placeholder"
+msgstr ""
+
+#: vc/config.php:670
+msgid "Search field placeholder text"
+msgstr ""
+
+#: vc/config.php:684
+msgid "Portfolio - Sections"
+msgstr ""
+
+#: vc/config.php:685
+msgid "Add portfolio sections shortcode"
+msgstr ""
+
+#: vc/config.php:739
+msgid "Add pricing shortcode"
+msgstr ""
+
+#: vc/config.php:825
+msgid "Add service shortcode"
+msgstr ""
+
+#: vc/config.php:911
+msgid "Add testimonial shortcode"
+msgstr ""
+
+#: vc/config.php:955
+msgid "Testimonial content"
+msgstr ""
+
+#: vc/config.php:956
+msgid "Enter testimonial content"
+msgstr ""
+
+#: widgets/widgets.php:27
+msgid "MT Latest Posts"
+msgstr ""
+
+#: widgets/widgets.php:29
+msgid "Display latest posts"
+msgstr ""
+
+#: widgets/widgets.php:123 widgets/widgets.php:249
+msgid "Title:"
+msgstr ""
+
+#: widgets/widgets.php:127
+msgid "Number of posts:"
+msgstr ""
+
+#: widgets/widgets.php:132 widgets/widgets.php:258
+msgid "Category slugs:"
+msgstr ""
+
+#: widgets/widgets.php:137 widgets/widgets.php:263
+msgid ""
+"If you want to use one category you can paste category slug here. If you "
+"want to use multiple categories just divide them with comma like so: "
+"category1, category2"
+msgstr ""
+
+#: widgets/widgets.php:161
+msgid "MT Latest Projects"
+msgstr ""
+
+#: widgets/widgets.php:163
+msgid "Display latest projects"
+msgstr ""
+
+#: widgets/widgets.php:253
+msgid "Number of projects:"
+msgstr ""
