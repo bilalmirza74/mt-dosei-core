@@ -260,3 +260,111 @@ class MT_Dosei_Elementor_Button extends \Elementor\Widget_Base {
 		);
 	}
 }
+
+class MT_Dosei_Elementor_Contact_Form extends \Elementor\Widget_Base {
+	public function get_name() {
+		return 'dosei-contact-form';
+	}
+
+	public function get_title() {
+		return esc_html__( 'Contact Form 7 Form', 'mt-dosei-core' );
+	}
+
+	public function get_icon() {
+		return 'eicon-form-horizontal';
+	}
+
+	public function get_categories() {
+		return array( 'general' );
+	}
+
+	protected function register_controls() {
+		$options = array();
+		if ( post_type_exists( 'wpcf7_contact_form' ) ) {
+			$forms = get_posts(
+				array(
+					'post_type'      => 'wpcf7_contact_form',
+					'post_status'    => 'publish',
+					'posts_per_page' => -1,
+					'orderby'        => 'title',
+					'order'          => 'ASC',
+				)
+			);
+			foreach ( $forms as $form ) {
+				$options[ $form->ID ] = $form->post_title;
+			}
+		}
+
+		$this->start_controls_section(
+			'content_section',
+			array( 'label' => esc_html__( 'Contact form', 'mt-dosei-core' ) )
+		);
+		$this->add_control(
+			'form_id',
+			array(
+				'label'       => esc_html__( 'Form', 'mt-dosei-core' ),
+				'type'        => \Elementor\Controls_Manager::SELECT,
+				'options'     => $options,
+				'default'     => '',
+				'description' => empty( $options ) ? esc_html__( 'Activate Contact Form 7 to choose a form.', 'mt-dosei-core' ) : '',
+			)
+		);
+		$this->end_controls_section();
+	}
+
+	protected function render() {
+		$settings = $this->get_settings_for_display();
+		$form_id = isset( $settings['form_id'] ) ? absint( $settings['form_id'] ) : 0;
+		if ( ! $form_id || ! shortcode_exists( 'contact-form-7' ) ) {
+			return;
+		}
+
+		echo do_shortcode( '[contact-form-7 id="' . $form_id . '"]' );
+	}
+}
+
+class MT_Dosei_Elementor_Map extends \Elementor\Widget_Base {
+	public function get_name() {
+		return 'dosei-map';
+	}
+
+	public function get_title() {
+		return esc_html__( 'Google Maps (WP Go Maps)', 'mt-dosei-core' );
+	}
+
+	public function get_icon() {
+		return 'eicon-google-maps';
+	}
+
+	public function get_categories() {
+		return array( 'general' );
+	}
+
+	protected function register_controls() {
+		$this->start_controls_section(
+			'content_section',
+			array( 'label' => esc_html__( 'Map', 'mt-dosei-core' ) )
+		);
+		$this->add_control(
+			'map_id',
+			array(
+				'label'       => esc_html__( 'Map ID', 'mt-dosei-core' ),
+				'type'        => \Elementor\Controls_Manager::NUMBER,
+				'default'     => 1,
+				'min'         => 1,
+				'description' => esc_html__( 'Use the ID of a map in WP Go Maps.', 'mt-dosei-core' ),
+			)
+		);
+		$this->end_controls_section();
+	}
+
+	protected function render() {
+		$settings = $this->get_settings_for_display();
+		$map_id = isset( $settings['map_id'] ) ? absint( $settings['map_id'] ) : 0;
+		if ( ! $map_id || ! shortcode_exists( 'wpgmza' ) ) {
+			return;
+		}
+
+		echo do_shortcode( '[wpgmza id="' . $map_id . '"]' );
+	}
+}

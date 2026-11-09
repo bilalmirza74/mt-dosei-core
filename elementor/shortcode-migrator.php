@@ -6,6 +6,7 @@
 add_action( 'add_meta_boxes_page', 'mt_dosei_add_elementor_migration_box' );
 add_action( 'admin_post_mt_dosei_convert_to_elementor', 'mt_dosei_convert_page_to_elementor' );
 add_action( 'admin_post_mt_dosei_restore_elementor_backup', 'mt_dosei_restore_elementor_backup' );
+add_action( 'admin_post_mt_dosei_restore_source_content', 'mt_dosei_restore_source_content' );
 add_action( 'admin_notices', 'mt_dosei_elementor_migration_notice' );
 add_action( 'elementor/widgets/register', 'mt_dosei_register_elementor_widgets' );
 
@@ -15,6 +16,8 @@ function mt_dosei_register_elementor_widgets( $widgets_manager ) {
 	$widgets_manager->register( new MT_Dosei_Elementor_Gallery_Carousel() );
 	$widgets_manager->register( new MT_Dosei_Elementor_Accordion() );
 	$widgets_manager->register( new MT_Dosei_Elementor_Button() );
+	$widgets_manager->register( new MT_Dosei_Elementor_Contact_Form() );
+	$widgets_manager->register( new MT_Dosei_Elementor_Map() );
 }
 
 function mt_dosei_add_elementor_migration_box( $post ) {
@@ -33,39 +36,84 @@ function mt_dosei_add_elementor_migration_box( $post ) {
 }
 
 function mt_dosei_render_elementor_migration_box( $post ) {
-	if ( ! preg_match( '/\[mt-section(?:\s|\])/', $post->post_content ) ) {
-		echo '<p>' . esc_html__( 'No Dosei section shortcodes were found in this page content. Restore the original page content from Revisions before converting it.', 'mt-dosei-core' ) . '</p>';
-		return;
-	}
-
-	$has_elementor_data = 'builder' === get_post_meta( $post->ID, '_elementor_edit_mode', true )
-		|| get_post_meta( $post->ID, '_elementor_data', true );
-	if ( $has_elementor_data ) {
-		echo '<p>' . esc_html__( 'This page already has Elementor data. Rebuilding will save a backup of its current Elementor layout first.', 'mt-dosei-core' ) . '</p>';
+	if ( preg_match( '/\[mt-section(?:\s|\])/', $post->post_content ) ) {
+		$has_elementor_data = 'builder' === get_post_meta( $post->ID, '_elementor_edit_mode', true )
+			|| get_post_meta( $post->ID, '_elementor_data', true );
+		$unsupported = mt_dosei_get_unsupported_shortcodes( $post->post_content );
+		if ( $unsupported ) {
+			echo '<p>' . esc_html__( 'This page has shortcodes without a shortcode-free Elementor conversion. They must be supported before this page can be converted safely.', 'mt-dosei-core' ) . '</p>';
+			echo '<p>' . esc_html( implode( ', ', $unsupported ) ) . '</p>';
+		} else {
+			echo '<p>' . esc_html__( 'Convert Dosei content into editable Elementor elements. The original source is backed up and removed from the page editor after conversion.', 'mt-dosei-core' ) . '</p>';
+			if ( $has_elementor_data ) {
+				echo '<p>' . esc_html__( 'The current Elementor layout will also be backed up before rebuilding.', 'mt-dosei-core' ) . '</p>';
+			}
+			echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">';
+			echo '<input type="hidden" name="action" value="mt_dosei_convert_to_elementor">';
+			echo '<input type="hidden" name="post_id" value="' . esc_attr( $post->ID ) . '">';
+			wp_nonce_field( 'mt_dosei_convert_to_elementor_' . $post->ID );
+			$button_label = $has_elementor_data
+				? esc_html__( 'Back up and rebuild Elementor layout', 'mt-dosei-core' )
+				: esc_html__( 'Convert to Elementor', 'mt-dosei-core' );
+			submit_button( $button_label, 'primary', 'submit', false );
+			echo '</form>';
+		}
 	} else {
-		echo '<p>' . esc_html__( 'Convert the Dosei layout, gallery, accordion panels, and buttons into editable Elementor elements. The original page content will be kept.', 'mt-dosei-core' ) . '</p>';
+		echo '<p>' . esc_html__( 'This page has no legacy Dosei section content. If it was already migrated, its original source is archived and hidden from the page editor.', 'mt-dosei-core' ) . '</p>';
 	}
 
-	echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">';
-	echo '<input type="hidden" name="action" value="mt_dosei_convert_to_elementor">';
-	echo '<input type="hidden" name="post_id" value="' . esc_attr( $post->ID ) . '">';
-	wp_nonce_field( 'mt_dosei_convert_to_elementor_' . $post->ID );
-	$button_label = $has_elementor_data
-		? esc_html__( 'Back up and rebuild Elementor layout', 'mt-dosei-core' )
-		: esc_html__( 'Convert to Elementor', 'mt-dosei-core' );
-	submit_button( $button_label, 'primary', 'submit', false );
-	echo '</form>';
+	mt_dosei_render_elementor_backup_controls( $post->ID );
+}
 
-	$backups = get_post_meta( $post->ID, '_mt_dosei_elementor_backups', true );
-	if ( is_array( $backups ) && ! empty( $backups ) ) {
+function mt_dosei_render_elementor_backup_controls( $post_id ) {
+	$elementor_backups = get_post_meta( $post_id, '_mt_dosei_elementor_backups', true );
+	if ( is_array( $elementor_backups ) && ! empty( $elementor_backups ) ) {
 		echo '<hr><p>' . esc_html__( 'A previous Elementor layout backup is available.', 'mt-dosei-core' ) . '</p>';
 		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">';
 		echo '<input type="hidden" name="action" value="mt_dosei_restore_elementor_backup">';
-		echo '<input type="hidden" name="post_id" value="' . esc_attr( $post->ID ) . '">';
-		wp_nonce_field( 'mt_dosei_restore_elementor_backup_' . $post->ID );
+		echo '<input type="hidden" name="post_id" value="' . esc_attr( $post_id ) . '">';
+		wp_nonce_field( 'mt_dosei_restore_elementor_backup_' . $post_id );
 		submit_button( esc_html__( 'Restore previous Elementor layout', 'mt-dosei-core' ), 'secondary', 'submit', false );
 		echo '</form>';
 	}
+
+	$source_backups = get_post_meta( $post_id, '_mt_dosei_source_backups', true );
+	if ( is_array( $source_backups ) && ! empty( $source_backups ) ) {
+		echo '<hr><p>' . esc_html__( 'The original page source is safely backed up and is not shown in the page editor.', 'mt-dosei-core' ) . '</p>';
+		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">';
+		echo '<input type="hidden" name="action" value="mt_dosei_restore_source_content">';
+		echo '<input type="hidden" name="post_id" value="' . esc_attr( $post_id ) . '">';
+		wp_nonce_field( 'mt_dosei_restore_source_content_' . $post_id );
+		submit_button( esc_html__( 'Restore original page source', 'mt-dosei-core' ), 'secondary', 'submit', false );
+		echo '</form>';
+	}
+}
+
+function mt_dosei_get_unsupported_shortcodes( $content ) {
+	$supported = array(
+		'mt-section',
+		'mt-row',
+		'mt-column',
+		'mt-service',
+		'mt-gallery-carousel',
+		'mt-accordion',
+		'mt-accordion-panel',
+		'mt-dropcap',
+		'mt-button',
+		'contact-form-7',
+		'wpgmza',
+	);
+	preg_match_all( '/\[(\/?)([a-z][a-z0-9_-]*)(?=\s|\])([^\]]*)\](?!\()/i', $content, $matches, PREG_SET_ORDER );
+
+	$unsupported = array();
+	foreach ( $matches as $match ) {
+		$tag = strtolower( $match[2] );
+		if ( ! in_array( $tag, $supported, true ) ) {
+			$unsupported[] = $tag;
+		}
+	}
+
+	return array_values( array_unique( $unsupported ) );
 }
 
 function mt_dosei_convert_page_to_elementor() {
@@ -89,6 +137,19 @@ function mt_dosei_convert_page_to_elementor() {
 		wp_die( esc_html__( 'No Dosei section shortcodes were found in this page content. Restore the original content from Revisions before converting it.', 'mt-dosei-core' ) );
 	}
 
+	$unsupported = mt_dosei_get_unsupported_shortcodes( $post->post_content );
+	if ( $unsupported ) {
+		wp_die(
+			esc_html(
+				sprintf(
+					/* translators: %s: shortcode names. */
+					__( 'Conversion stopped because these shortcodes do not yet have shortcode-free Elementor widgets: %s', 'mt-dosei-core' ),
+					implode( ', ', $unsupported )
+				)
+			)
+		);
+	}
+
 	$existing_elementor_data = get_post_meta( $post_id, '_elementor_data', true );
 	$has_elementor_data = 'builder' === get_post_meta( $post_id, '_elementor_edit_mode', true ) || $existing_elementor_data;
 	if ( $has_elementor_data ) {
@@ -100,12 +161,27 @@ function mt_dosei_convert_page_to_elementor() {
 			'data'       => $existing_elementor_data,
 			'version'    => get_post_meta( $post_id, '_elementor_version', true ),
 			'edit_mode'  => get_post_meta( $post_id, '_elementor_edit_mode', true ),
+			'post_content' => $post->post_content,
 			'created_at' => current_time( 'mysql', true ),
 		);
 		update_post_meta( $post_id, '_mt_dosei_elementor_backups', array_slice( $backups, -5 ) );
 		if ( get_post_meta( $post_id, '_mt_dosei_elementor_backups', true ) !== array_slice( $backups, -5 ) ) {
 			wp_die( esc_html__( 'The existing Elementor layout could not be backed up, so the page was not changed.', 'mt-dosei-core' ) );
 		}
+	}
+
+	$source_backups = get_post_meta( $post_id, '_mt_dosei_source_backups', true );
+	if ( ! is_array( $source_backups ) ) {
+		$source_backups = array();
+	}
+	$source_backups[] = array(
+		'post_content' => $post->post_content,
+		'created_at'   => current_time( 'mysql', true ),
+	);
+	$source_backups = array_slice( $source_backups, -5 );
+	update_post_meta( $post_id, '_mt_dosei_source_backups', $source_backups );
+	if ( get_post_meta( $post_id, '_mt_dosei_source_backups', true ) !== $source_backups ) {
+		wp_die( esc_html__( 'The original page source could not be backed up. The page was not changed.', 'mt-dosei-core' ) );
 	}
 
 	$elements = mt_dosei_build_elementor_content( $post->post_content );
@@ -143,6 +219,33 @@ function mt_dosei_convert_page_to_elementor() {
 			delete_post_meta( $post_id, '_elementor_edit_mode' );
 		}
 		wp_die( esc_html__( 'Elementor could not activate the converted content. The original page content is unchanged.', 'mt-dosei-core' ) );
+	}
+
+	$cleared = wp_update_post(
+		array(
+			'ID'           => $post_id,
+			'post_content' => '',
+		),
+		true
+	);
+	$updated_post = get_post( $post_id );
+	if ( is_wp_error( $cleared ) || ! $updated_post || '' !== $updated_post->post_content ) {
+		if ( $has_elementor_data ) {
+			update_post_meta( $post_id, '_elementor_data', $existing_elementor_data );
+			update_post_meta( $post_id, '_elementor_version', $existing_elementor_version );
+			update_post_meta( $post_id, '_elementor_edit_mode', $existing_edit_mode );
+		} else {
+			delete_post_meta( $post_id, '_elementor_data' );
+			delete_post_meta( $post_id, '_elementor_version' );
+			delete_post_meta( $post_id, '_elementor_edit_mode' );
+		}
+		wp_update_post(
+			array(
+				'ID'           => $post_id,
+				'post_content' => $post->post_content,
+			)
+		);
+		wp_die( esc_html__( 'The original page source could not be removed from the editor. The previous Elementor layout was restored.', 'mt-dosei-core' ) );
 	}
 	clean_post_cache( $post_id );
 
@@ -190,6 +293,18 @@ function mt_dosei_restore_elementor_backup() {
 	} else {
 		delete_post_meta( $post_id, '_elementor_edit_mode' );
 	}
+	if ( isset( $backup['post_content'] ) ) {
+		$content_update = wp_update_post(
+			array(
+				'ID'           => $post_id,
+				'post_content' => $backup['post_content'],
+			),
+			true
+		);
+		if ( is_wp_error( $content_update ) ) {
+			wp_die( esc_html__( 'The previous Elementor layout was restored, but the page source could not be restored.', 'mt-dosei-core' ) );
+		}
+	}
 	update_post_meta( $post_id, '_mt_dosei_elementor_backups', $backups );
 	clean_post_cache( $post_id );
 
@@ -198,6 +313,48 @@ function mt_dosei_restore_elementor_backup() {
 			'post'                  => $post_id,
 			'action'                => 'edit',
 			'mt_dosei_elementor'    => 'restored',
+		),
+		admin_url( 'post.php' )
+	);
+	wp_safe_redirect( $edit_link );
+	exit;
+}
+
+function mt_dosei_restore_source_content() {
+	$post_id = isset( $_POST['post_id'] ) ? absint( $_POST['post_id'] ) : 0;
+	if ( ! $post_id || 'page' !== get_post_type( $post_id ) || ! current_user_can( 'edit_post', $post_id ) ) {
+		wp_die( esc_html__( 'You are not allowed to restore this page source.', 'mt-dosei-core' ) );
+	}
+
+	check_admin_referer( 'mt_dosei_restore_source_content_' . $post_id );
+	$backups = get_post_meta( $post_id, '_mt_dosei_source_backups', true );
+	if ( ! is_array( $backups ) || empty( $backups ) ) {
+		wp_die( esc_html__( 'No original page source backup is available.', 'mt-dosei-core' ) );
+	}
+
+	$backup = array_pop( $backups );
+	if ( ! is_array( $backup ) || ! array_key_exists( 'post_content', $backup ) ) {
+		wp_die( esc_html__( 'The original page source backup is invalid.', 'mt-dosei-core' ) );
+	}
+
+	$updated = wp_update_post(
+		array(
+			'ID'           => $post_id,
+			'post_content' => $backup['post_content'],
+		),
+		true
+	);
+	if ( is_wp_error( $updated ) || get_post_field( 'post_content', $post_id, 'raw' ) !== $backup['post_content'] ) {
+		wp_die( esc_html__( 'The original page source could not be restored.', 'mt-dosei-core' ) );
+	}
+
+	update_post_meta( $post_id, '_mt_dosei_source_backups', $backups );
+	clean_post_cache( $post_id );
+	$edit_link = add_query_arg(
+		array(
+			'post'                  => $post_id,
+			'action'                => 'edit',
+			'mt_dosei_elementor'    => 'source-restored',
 		),
 		admin_url( 'post.php' )
 	);
@@ -215,6 +372,8 @@ function mt_dosei_elementor_migration_notice() {
 		$message = esc_html__( 'Dosei content was converted. Open this page with Elementor to edit its sections and widgets.', 'mt-dosei-core' );
 	} elseif ( 'restored' === $status ) {
 		$message = esc_html__( 'The previous Elementor layout was restored.', 'mt-dosei-core' );
+	} elseif ( 'source-restored' === $status ) {
+		$message = esc_html__( 'The original page source was restored. The shortcodes will now be visible in the page editor.', 'mt-dosei-core' );
 	} else {
 		return;
 	}
@@ -314,8 +473,11 @@ function mt_dosei_parse_shortcode_sequence( $content, $tokens, &$index, &$positi
 		$index++;
 		$position = $token['end'];
 
-		$is_self_closing = in_array( $token['tag'], array( 'mt-gallery-carousel', 'mt-dropcap' ), true )
+		$is_self_closing = 'mt-gallery-carousel' === $token['tag']
 			|| '/' === substr( rtrim( $token['attributes'] ), -1 );
+		if ( 'mt-dropcap' === $token['tag'] ) {
+			$is_self_closing = ! mt_dosei_has_closing_shortcode( $tokens, $index, 'mt-dropcap', $closing_tag );
+		}
 		$children = $is_self_closing
 			? array()
 			: mt_dosei_parse_shortcode_sequence( $content, $tokens, $index, $position, $token['tag'] );
@@ -333,6 +495,26 @@ function mt_dosei_parse_shortcode_sequence( $content, $tokens, &$index, &$positi
 	}
 
 	return $nodes;
+}
+
+function mt_dosei_has_closing_shortcode( $tokens, $index, $tag, $parent_tag ) {
+	$depth = 0;
+	for ( $i = $index; $i < count( $tokens ); $i++ ) {
+		if ( $tokens[ $i ]['closing'] ) {
+			if ( $tag === $tokens[ $i ]['tag'] ) {
+				if ( 0 === $depth ) {
+					return true;
+				}
+				$depth--;
+			} elseif ( $parent_tag && $parent_tag === $tokens[ $i ]['tag'] ) {
+				return false;
+			}
+		} elseif ( $tag === $tokens[ $i ]['tag'] ) {
+			$depth++;
+		}
+	}
+
+	return false;
 }
 
 function mt_dosei_append_text_node( &$nodes, $text ) {
@@ -557,13 +739,32 @@ function mt_dosei_render_accordion_content( $nodes ) {
 
 function mt_dosei_text_to_elementor_widgets( $text ) {
 	$elements = array();
-	preg_match_all( '/\[[^\]]+\]/', $text, $matches, PREG_OFFSET_CAPTURE );
+	preg_match_all( '/\[(contact-form-7|wpgmza)\b[^\]]*\]/i', $text, $matches, PREG_OFFSET_CAPTURE );
 	$position = 0;
 
 	foreach ( $matches[0] as $match ) {
 		$plain_text = substr( $text, $position, $match[1] - $position );
 		$elements = array_merge( $elements, mt_dosei_plain_text_to_elementor_widgets( $plain_text ) );
-		$elements[] = mt_dosei_new_elementor_widget( 'shortcode', array( 'shortcode' => $match[0] ) );
+		if ( preg_match( '/^\[(contact-form-7|wpgmza)\b(.*)\]$/i', $match[0], $shortcode_match ) ) {
+			$attributes = shortcode_parse_atts( $shortcode_match[2] );
+			if ( ! is_array( $attributes ) ) {
+				$attributes = array();
+			}
+			if ( 'contact-form-7' === strtolower( $shortcode_match[1] ) ) {
+				$elements[] = mt_dosei_new_elementor_widget(
+					'dosei-contact-form',
+					array(
+						'form_id'    => isset( $attributes['id'] ) ? absint( $attributes['id'] ) : 0,
+						'form_title' => isset( $attributes['title'] ) ? sanitize_text_field( $attributes['title'] ) : '',
+					)
+				);
+			} elseif ( 'wpgmza' === strtolower( $shortcode_match[1] ) ) {
+				$elements[] = mt_dosei_new_elementor_widget(
+					'dosei-map',
+					array( 'map_id' => isset( $attributes['id'] ) ? absint( $attributes['id'] ) : 0 )
+				);
+			}
+		}
 		$position = $match[1] + strlen( $match[0] );
 	}
 
