@@ -3,7 +3,7 @@
  * Plugin Name: MT Dosei Core
  * Plugin URI:  http://themeforest.net/user/maarcin
  * Description: Core functionality for Dosei Theme: shortcodes, custom post types, widgets and custom functions.
- * Version:     1.0
+ * Version:     1.1
  * Author:      Marcin Michalak
  * Author URI:  http://themeforest.net/user/maarcin
  * Text Domain: mt-dosei-core
@@ -39,6 +39,11 @@ require_once plugin_dir_path( __FILE__ ) . 'vc/config.php';
  * Widgets
  */
 require_once plugin_dir_path( __FILE__ ) . 'widgets/widgets.php';
+
+/**
+ * Elementor migration support
+ */
+require_once plugin_dir_path( __FILE__ ) . 'elementor/shortcode-migrator.php';
 
 /**
  * Load plugin textdomain
